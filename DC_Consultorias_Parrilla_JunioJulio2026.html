@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parrilla Estratégica · DC Consultorías · Junio–Julio 2026</title>
+  <style>
+    :root {
+      --azul:          #1e3a8a;
+      --azul-medio:    #2563eb;
+      --azul-claro:    #dbeafe;
+      --verde:         #065f46;
+      --verde-claro:   #d1fae5;
+      --naranja:       #92400e;
+      --naranja-claro: #fef3c7;
+      --rojo:          #991b1b;
+      --rojo-claro:    #fee2e2;
+      --ia:            #5b21b6;
+      --ia-claro:      #ede9fe;
+      --ig:            #9d174d;
+      --ig-claro:      #fce7f3;
+      --li:            #1e40af;
+      --li-claro:      #dbeafe;
+      --gris-50:       #f8fafc;
+      --gris-100:      #f1f5f9;
+      --gris-200:      #e2e8f0;
+      --gris-500:      #64748b;
+      --gris-700:      #334155;
+      --gris-900:      #0f172a;
+      --blanco:        #ffffff;
+      --texto:         #1e293b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--gris-100);
+      color: var(--texto);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #1e3a8a 100%);
+      color: #fff;
+      padding: 36px 52px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-left h1  { font-size: 24px; font-weight: 800; letter-spacing: -.4px; }
+    .header-left p   { font-size: 13px; opacity: .75; margin-top: 5px; }
+    .header-badges   { display: flex; gap: 9px; flex-wrap: wrap; }
+    .hbadge {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .hbadge.ia { background: rgba(124,58,237,.35); border-color: rgba(196,181,253,.5); }
+
+    /* ── LAYOUT ── */
+    main { max-width: 1240px; margin: 0 auto; padding: 36px 28px 72px; }
+
+    /* ── LEYENDA ── */
+    .leyenda {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+      background: var(--blanco);
+      border: 1px solid var(--gris-200);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .leyenda-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gris-500); width: 100%; margin-bottom: 4px; }
+    .leg-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--gris-700); }
+    .leg-dot  { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ── MES HEADER ── */
+    .mes-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 44px 0 20px;
+      padding: 24px 28px;
+      border-radius: 12px;
+      border-left: 5px solid;
+    }
+    .mes-header.junio {
+      background: linear-gradient(90deg, #ecfdf5 0%, #f0fdf4 100%);
+      border-color: #059669;
+    }
+    .mes-header.julio {
+      background: linear-gradient(90deg, #eff6ff 0%, #f0f9ff 100%);
+      border-color: #2563eb;
+    }
+    .mes-pill {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin-bottom: 8px;
+    }
+    .mes-pill.junio { background: #d1fae5; color: #065f46; }
+    .mes-pill.julio { background: #dbeafe; color: #1e40af; }
+    .mes-header h2   { font-size: 20px; font-weight: 800; color: var(--azul); }
+    .mes-header .narrativa { font-size: 13px; color: var(--gris-500); margin-top: 4px; }
+    .mes-header .foco { font-size: 13px; color: var(--gris-700); margin-top: 8px; max-width: 540px; line-height: 1.55; }
+    .mes-stats { display: flex; gap: 16px; flex-wrap: wrap; }
+    .mes-stat {
+      background: var(--blanco);
+      border: 1px solid var(--gris-200);
+      border-radius: 8px;
+      padding: 12px 18px;
+      text-align: center;
+      min-width: 80px;
+    }
+    .mes-stat .num  { font-size: 26px; font-weight: 800; color: var(--azul); line-height: 1; }
+    .mes-stat .lbl  { font-size: 11px; color: var(--gris-500); margin-top: 3px; }
+
+    /* ── SEMANA CARD ── */
+    .semana-card {
+      background: var(--blanco);
+      border-radius: 10px;
+      border: 1px solid var(--gris-200);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .semana-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 11px 20px;
+      background: var(--gris-50);
+      border-bottom: 1px solid var(--gris-200);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .semana-header strong { font-size: 13px; color: var(--azul); font-weight: 700; }
+    .semana-header .sem-fecha { font-size: 12px; color: var(--gris-500); }
+    .semana-foco {
+      padding: 9px 20px;
+      font-size: 12px;
+      color: var(--gris-500);
+      background: #fafbfc;
+      border-bottom: 1px solid var(--gris-200);
+    }
+    .semana-foco strong { color: var(--gris-700); font-style: normal; }
+
+    /* ── TABLA ── */
+    .tbl-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th {
+      background: var(--azul);
+      color: #fff;
+      padding: 9px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      white-space: nowrap;
+    }
+    tbody tr { border-bottom: 1px solid var(--gris-200); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--gris-50); }
+    tbody tr.ia-row { background: #faf5ff; }
+    tbody tr.ia-row:hover { background: #f3e8ff; }
+    td { padding: 10px 14px; vertical-align: top; }
+    td.fecha-cell {
+      font-weight: 700;
+      white-space: nowrap;
+      color: var(--azul);
+      font-size: 12px;
+      width: 70px;
+    }
+    td.hook-cell  { color: var(--gris-700); font-style: italic; font-size: 12.5px; }
+    td.cta-cell   { font-size: 12px; color: var(--azul-medio); font-weight: 600; }
+    td.kpi-cell   { font-size: 11px; color: var(--gris-500); }
+
+    /* ── TAGS ── */
+    .tag {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tag-reel      { background: var(--ig-claro);    color: var(--ig); }
+    .tag-carrusel  { background: #e0e7ff;             color: #3730a3; }
+    .tag-post      { background: var(--verde-claro);  color: var(--verde); }
+    .tag-estatico  { background: var(--naranja-claro);color: var(--naranja); }
+    .tag-ia        { background: var(--ia-claro);     color: var(--ia); }
+
+    .canal-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .c-ig { background: var(--ig-claro); color: var(--ig); }
+    .c-li { background: var(--li-claro); color: var(--li); }
+
+    .var-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      white-space: nowrap;
+    }
+    .v-atr  { background: #dbeafe; color: #1e40af; }
+    .v-aut  { background: var(--verde-claro); color: var(--verde); }
+    .v-con  { background: var(--naranja-claro); color: var(--naranja); }
+    .v-ia   { background: var(--ia-claro); color: var(--ia); }
+
+    /* ── FECHAS CLAVE ── */
+    .fechas-section { margin: 32px 0 0; }
+    .fechas-section h3 {
+      font-size: 14px; font-weight: 700; color: var(--azul);
+      margin-bottom: 12px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .fechas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 12px; }
+    .fc {
+      border-left: 4px solid var(--azul-medio);
+      background: var(--blanco);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      border: 1px solid var(--gris-200);
+      border-left-width: 4px;
+    }
+    .fc.fc-verde  { border-color: #059669; }
+    .fc.fc-azul   { border-color: #2563eb; }
+    .fc.fc-oro    { border-color: #d97706; }
+    .fc.fc-ia     { border-color: #7c3aed; }
+    .fc .fc-date  { font-weight: 700; color: var(--azul); font-size: 12px; }
+    .fc .fc-name  { font-weight: 600; margin-top: 3px; font-size: 13px; }
+    .fc .fc-note  { color: var(--gris-500); font-size: 11px; margin-top: 4px; }
+
+    /* ── RESUMEN ── */
+    .resumen-section { margin-top: 48px; }
+    .resumen-section h3 {
+      font-size: 16px; font-weight: 700; color: var(--azul);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gris-200);
+    }
+    .resumen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+    }
+    .res-card {
+      background: var(--blanco);
+      border: 1px solid var(--gris-200);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .res-card .num  { font-size: 34px; font-weight: 800; color: var(--azul); line-height: 1; }
+    .res-card .lbl  { font-size: 12px; color: var(--gris-500); margin-top: 4px; }
+    .res-card .det  {
+      font-size: 12px; color: var(--gris-700);
+      margin-top: 10px; border-top: 1px solid var(--gris-200);
+      padding-top: 10px; line-height: 1.55;
+    }
+    .res-card.ia-card  { border-color: #c4b5fd; background: #faf5ff; }
+    .res-card.ia-card .num { color: var(--ia); }
+
+    /* ── PILARES REFERENCIA ── */
+    .pilares-ref {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .pilar-ref {
+      background: var(--blanco);
+      border: 1px solid var(--gris-200);
+      border-radius: 8px;
+      padding: 14px 16px;
+      border-top: 3px solid var(--azul-medio);
+    }
+    .pilar-ref h4 { font-size: 12px; font-weight: 700; color: var(--azul); margin-bottom: 5px; }
+    .pilar-ref p  { font-size: 12px; color: var(--gris-500); line-height: 1.4; }
+
+    /* ── HASHTAGS ── */
+    .hashtags-section { margin-top: 32px; }
+    .hashtags-section h3 { font-size: 14px; font-weight: 700; color: var(--azul); margin-bottom: 12px; }
+    .ht-group { margin-bottom: 14px; }
+    .ht-group h4 { font-size: 12px; font-weight: 700; color: var(--gris-700); margin-bottom: 7px; }
+    .ht-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ht { background: var(--azul-claro); color: var(--azul-medio); border: 1px solid #bfdbfe; border-radius: 999px; padding: 3px 12px; font-size: 12px; font-weight: 500; }
+    .ht.ht-ia { background: var(--ia-claro); color: var(--ia); border-color: #c4b5fd; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--azul);
+      color: rgba(255,255,255,.7);
+      text-align: center;
+      padding: 20px 24px;
+      font-size: 12px;
+      margin-top: 0;
+    }
+    footer strong { color: #fff; }
+
+    @media (max-width: 768px) {
+      header  { padding: 24px 20px 20px; }
+      main    { padding: 24px 16px 48px; }
+      .mes-header { padding: 18px 20px; }
+    }
+
+    /* ── BORRADORES ── */
+    .borradores-section { padding: 20px; border-top: 2px dashed var(--gris-200); background: var(--gris-50); }
+    .borradores-title { font-size: 11px; font-weight: 700; color: var(--azul); text-transform: uppercase; letter-spacing: .7px; margin-bottom: 12px; }
+    details.borrador { background: var(--blanco); border: 1px solid var(--gris-200); border-radius: 8px; margin-bottom: 8px; }
+    details.borrador.ia-borrador { border-color: #c4b5fd; background: #fdf8ff; }
+    details.borrador summary { padding: 10px 16px; cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--gris-700); list-style: none; display: flex; align-items: center; gap: 10px; }
+    details.borrador summary::-webkit-details-marker { display: none; }
+    details.borrador summary::before { content: '▶'; font-size: 9px; color: var(--gris-500); transition: transform .2s; flex-shrink: 0; }
+    details.borrador[open] summary::before { transform: rotate(90deg); }
+    .b-num { font-size: 10px; font-weight: 800; color: var(--azul-medio); background: var(--azul-claro); padding: 1px 7px; border-radius: 4px; flex-shrink: 0; }
+    .b-num.ia { color: var(--ia); background: var(--ia-claro); }
+    .b-inner { padding: 0 16px 16px; display: grid; gap: 10px; }
+    .b-block { border-radius: 7px; padding: 12px 14px; font-size: 13px; line-height: 1.65; border: 1px solid var(--gris-200); background: var(--blanco); }
+    .b-block label { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--gris-500); margin-bottom: 6px; }
+    .b-block.hook { background: #eff6ff; border-color: #bfdbfe; font-style: italic; }
+    .b-block.cta  { background: #f0fdf4; border-color: #bbf7d0; }
+    .b-block.ia   { background: #faf5ff; border-color: #ddd6fe; }
+    .b-block.frase { background: #fefce8; border-color: #fde68a; font-size: 16px; font-weight: 700; font-style: italic; color: var(--gris-900); text-align: center; padding: 22px; }
+    .b-tbl { width: 100%; border-collapse: collapse; font-size: 12px; overflow-x: auto; display: block; }
+    .b-tbl th { background: var(--azul); color: #fff; padding: 7px 10px; text-align: left; font-size: 10.5px; white-space: nowrap; }
+    .b-tbl td { padding: 7px 10px; border-bottom: 1px solid var(--gris-200); vertical-align: top; }
+    .b-tbl tr:last-child td { border-bottom: none; }
+    .b-tbl.ia th { background: var(--ia); }
+    .b-ht { font-size: 11px; color: var(--azul-medio); margin-top: 6px; }
+    .b-ht.ia { color: var(--ia); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-left">
+    <h1>DC Consultorías — Parrilla Estratégica</h1>
+    <p>Junio · Julio 2026 &nbsp;·&nbsp; LinkedIn + Instagram &nbsp;·&nbsp; DC_ContentOps</p>
+  </div>
+  <div class="header-badges">
+    <span class="hbadge">📸 Instagram</span>
+    <span class="hbadge">💼 LinkedIn</span>
+    <span class="hbadge">26 piezas totales</span>
+    <span class="hbadge">2 meses estratégicos</span>
+    <span class="hbadge ia">🤖 IA · 4 piezas obligatorias</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- LEYENDA -->
+  <div class="leyenda">
+    <div class="leyenda-title">Referencia de etiquetas</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#9d174d"></div> Reel Instagram</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#3730a3"></div> Carrusel Instagram</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#065f46"></div> Post LinkedIn / Estático</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#92400e"></div> Post Estático Instagram</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#5b21b6"></div> 🤖 Pieza IA Obligatoria</div>
+    <div class="leg-item"><span class="var-tag v-atr">Atracción</span></div>
+    <div class="leg-item"><span class="var-tag v-aut">Autoridad</span></div>
+    <div class="leg-item"><span class="var-tag v-con">Conversión</span></div>
+    <div class="leg-item"><span class="var-tag v-ia">IA · Pymes</span></div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       JUNIO 2026
+  ════════════════════════════════════════ -->
+  <div class="mes-header junio">
+    <div>
+      <div class="mes-pill junio">Junio 2026</div>
+      <h2>Marketing que conversa con ventas</h2>
+      <div class="narrativa">Narrativa del mes</div>
+      <div class="foco">Mostrar cómo el marketing debe estar integrado con la estrategia comercial. Posicionar a DC como el puente entre comunicación y resultados. Cada pieza conecta mensaje con acción comercial concreta.</div>
+    </div>
+    <div class="mes-stats">
+      <div class="mes-stat"><div class="num">13</div><div class="lbl">Piezas</div></div>
+      <div class="mes-stat"><div class="num">4</div><div class="lbl">Semanas</div></div>
+      <div class="mes-stat"><div class="num">2</div><div class="lbl">Piezas IA</div></div>
+      <div class="mes-stat"><div class="num">7</div><div class="lbl">Instagram</div></div>
+      <div class="mes-stat"><div class="num">6</div><div class="lbl">LinkedIn</div></div>
+    </div>
+  </div>
+
+  <!-- SEMANA 1 JUNIO -->
+  <div class="semana-card">
+    <div class="semana-header">
+      <strong>Semana 1 — Junio</strong>
+      <span class="sem-fecha">2 al 7 de junio · Eje: La desconexión que cuesta ventas</span>
+    </div>
+    <div class="semana-foco">Objetivo semanal: <strong>Generar identificación con el problema de la desconexión marketing-ventas. Que el empresario reconozca el patrón en su empresa.</strong></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Canal</th>
+            <th>Formato</th>
+            <th>Pilar</th>
+            <th>Hook / Tema</th>
+            <th>Variable</th>
+            <th>CTA</th>
+            <th>KPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fecha-cell">Mar 2</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-reel">Reel</span></td>
+            <td>P2: Marketing estratégico</td>
+            <td class="hook-cell">"Tu marketing está generando ruido cuando debería estar generando oportunidades comerciales."</td>
+            <td><span class="var-tag v-atr">Atracción</span></td>
+            <td class="cta-cell">Comenta si te pasa esto</td>
+            <td class="kpi-cell">Alcance · Comentarios</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Jue 4</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-post">Post estratégico</span></td>
+            <td>P2: Marketing estratégico</td>
+            <td class="hook-cell">"La mayoría de pymes tiene marketing y tiene ventas. Pocas tienen marketing que vende."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">¿Cómo lo gestionan en tu empresa?</td>
+            <td class="kpi-cell">Impresiones · DMs</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Sáb 6</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-carrusel">Carrusel</span></td>
+            <td>P2: Marketing estratégico</td>
+            <td class="hook-cell">"5 preguntas que marketing debe responderle a ventas antes de publicar cualquier contenido."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">Guarda este carrusel</td>
+            <td class="kpi-cell">Guardados · Compartidos</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="borradores-section">
+      <div class="borradores-title">📝 Borradores — Semana 1 Junio</div>
+
+      <details class="borrador">
+        <summary><span class="b-num">J01</span> Reel IG · Mar 2 jun · "Tu marketing genera ruido cuando debería generar oportunidades"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primer frame (texto en pantalla)</label>"¿Tu marketing genera ventas o solo seguidores?"</div>
+          <table class="b-tbl">
+            <thead><tr><th>Segmento</th><th>Tiempo</th><th>Texto en pantalla</th><th>Voz / Locución</th></tr></thead>
+            <tbody>
+              <tr><td>Apertura</td><td>0–3 s</td><td>"¿Tu marketing genera ventas o solo seguidores?"</td><td>—</td></tr>
+              <tr><td>Problema</td><td>3–10 s</td><td>3 viñetas: Publicar sin estrategia · Diseñar sin mensaje · Medir likes, no ventas</td><td>"La mayoría de pymes publica contenido… pero no convierte."</td></tr>
+              <tr><td>Contraste</td><td>10–18 s</td><td>"Publicar no es lo mismo que comunicar con propósito comercial."</td><td>"Hay una diferencia entre estar presente en redes y ser relevante para quien compra."</td></tr>
+              <tr><td>Cierre + CTA</td><td>18–22 s</td><td>Logo DC + "¿Te pasa esto? Comenta ↓"</td><td>"Cuéntanos cómo se ve el marketing en tu empresa hoy."</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>Publicar no es lo mismo que comunicar con propósito comercial.<br><br>Si tu marketing no está alineado con lo que tu equipo de ventas necesita, estás invirtiendo en ruido.<br><br>¿Cómo se ve esto en tu empresa? Comenta 👇<br><br><span class="b-ht">#DCConsultorias #MarketingYVentas #EstrategiaComercial #PymesConEstrategia</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">J02</span> Post LI · Jue 4 jun · "Marketing que vende vs. marketing que publica"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primera línea</label>La mayoría de pymes tiene marketing y tiene ventas. Pocas tienen marketing que vende.</div>
+          <div class="b-block"><label>Cuerpo del post</label>El problema no es falta de contenido.<br>Es que marketing y ventas trabajan en paralelo, no en conjunto.<br><br>Marketing crea piezas. Ventas sale a cerrar sin un mensaje unificado. Y el cliente no sabe muy bien por qué elegirte a ti.<br><br>Cuando los dos equipos conversan de verdad, pasan tres cosas:<br>✔ El mensaje llega al cliente antes de la primera llamada comercial.<br>✔ El equipo de ventas tiene argumentos respaldados.<br>✔ El cliente llega con confianza, no con dudas.<br><br>La pregunta real no es "¿estamos publicando contenido?" sino "¿ese contenido le facilita el trabajo a ventas?"</div>
+          <div class="b-block cta"><label>CTA</label>¿Cómo gestionan esa relación marketing-ventas en tu empresa? Cuéntame en comentarios 👇<br><br><span class="b-ht">#DCConsultorias #MarketingYVentas #GestionComercial #EstrategiaComercial #Pymes</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">J03</span> Carrusel IG · Sáb 6 jun · "5 preguntas que marketing debe responderle a ventas"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Portada — Slide 1</label>"5 preguntas que marketing debe responderle a ventas antes de publicar cualquier contenido." · Subtexto: "Guarda este carrusel 📌"</div>
+          <table class="b-tbl">
+            <thead><tr><th>Slide</th><th>Título</th><th>Contenido del slide</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Portada</td><td>"5 preguntas que marketing debe responderle a ventas." Subtexto: "Si no las responde, el contenido no vende."</td></tr>
+              <tr><td>2</td><td>Pregunta 1</td><td>¿Cuáles son las objeciones más frecuentes que recibe el vendedor? → El contenido debe responderlas antes de la llamada comercial.</td></tr>
+              <tr><td>3</td><td>Pregunta 2</td><td>¿En qué etapa del proceso de compra está el cliente cuando nos encuentra? → El mensaje cambia según si está explorando o ya comparando proveedores.</td></tr>
+              <tr><td>4</td><td>Pregunta 3</td><td>¿Qué argumentos terminan cerrando la venta? → El contenido debe amplificar esos mismos argumentos antes del contacto.</td></tr>
+              <tr><td>5</td><td>Pregunta 4</td><td>¿Qué genera más fricción en el proceso comercial? → El contenido puede eliminar barreras antes de que el vendedor entre en juego.</td></tr>
+              <tr><td>6</td><td>Pregunta 5</td><td>¿El equipo de ventas usaría este contenido en una reunión con el cliente? → Si la respuesta es "no", hay un problema de alineación.</td></tr>
+              <tr><td>7</td><td>La diferencia</td><td>Marketing que no conoce el proceso comercial trabaja para los seguidores. Marketing que lo conoce trabaja para las ventas.</td></tr>
+              <tr><td>8</td><td>Lo que cambia</td><td>Con estas respuestas: más confianza del cliente / menos objeciones en la reunión / ciclo de venta más corto.</td></tr>
+              <tr><td>9</td><td>Reflexión</td><td>¿Tu equipo de marketing conoce el proceso de ventas de principio a fin?</td></tr>
+              <tr><td>10</td><td>CTA</td><td>"En DC Consultorías conectamos marketing con estrategia comercial. ¿Hablamos?" + Logo + www.dcconsultorias.com</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>Si marketing y ventas no hablan el mismo idioma, el cliente lo nota.<br><br>Guarda este carrusel para tu próxima reunión de equipo 📌<br><br><span class="b-ht">#DCConsultorias #MarketingYVentas #EstrategiaDeContenido #PymesConEstrategia #GestionComercial</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- SEMANA 2 JUNIO -->
+  <div class="semana-card">
+    <div class="semana-header">
+      <strong>Semana 2 — Junio</strong>
+      <span class="sem-fecha">9 al 14 de junio · Eje: Propuesta de valor — el eje de todo</span>
+    </div>
+    <div class="semana-foco">Objetivo semanal: <strong>Mostrar que sin una propuesta de valor clara, el marketing y la venta pierden fuerza. Posicionar a DC como el acompañante que ayuda a construirla.</strong></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Canal</th>
+            <th>Formato</th>
+            <th>Pilar</th>
+            <th>Hook / Tema</th>
+            <th>Variable</th>
+            <th>CTA</th>
+            <th>KPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fecha-cell">Lun 9</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-reel">Reel</span></td>
+            <td>P2: Marketing estratégico</td>
+            <td class="hook-cell">"¿Sabes qué convence realmente a tus clientes de comprar? No lo que crees. Lo que ellos sienten."</td>
+            <td><span class="var-tag v-atr">Atracción</span></td>
+            <td class="cta-cell">Cuéntanos en comentarios</td>
+            <td class="kpi-cell">Alcance · Guardados</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Mié 11</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-post">Post estratégico</span></td>
+            <td>P2: Marketing estratégico</td>
+            <td class="hook-cell">"Una propuesta de valor débil obliga a competir por precio. Y esa es una guerra que nadie quiere ganar."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">¿Tu empresa tiene clara su propuesta de valor?</td>
+            <td class="kpi-cell">Impresiones · Comentarios</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Vie 13</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-carrusel">Carrusel</span></td>
+            <td>P2: Marketing estratégico</td>
+            <td class="hook-cell">"Cómo construir una propuesta de valor clara en 4 pasos. Sin fórmulas genéricas."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">Guarda y aplícalo esta semana</td>
+            <td class="kpi-cell">Guardados · DMs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="borradores-section">
+      <div class="borradores-title">📝 Borradores — Semana 2 Junio</div>
+
+      <details class="borrador">
+        <summary><span class="b-num">J04</span> Reel IG · Lun 9 jun · "¿Sabes qué convence realmente a tus clientes de comprar?"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primer frame</label>"Si no sabes por qué tu cliente te elige a ti y no a la competencia, tu marketing trabaja a ciegas."</div>
+          <table class="b-tbl">
+            <thead><tr><th>Segmento</th><th>Tiempo</th><th>Texto en pantalla</th><th>Voz / Locución</th></tr></thead>
+            <tbody>
+              <tr><td>Apertura</td><td>0–3 s</td><td>"¿Qué convence realmente a tus clientes de comprar?"</td><td>—</td></tr>
+              <tr><td>Problema</td><td>3–10 s</td><td>Viñetas: Crees que es el precio · Crees que es el producto · Pero rara vez preguntas</td><td>"La mayoría de empresas asume que conoce a su cliente. Muy pocas lo comprueban."</td></tr>
+              <tr><td>Contraste</td><td>10–18 s</td><td>"Tu propuesta de valor existe en la mente del cliente, no en tu presentación comercial."</td><td>"Lo que cierra una venta no es lo que tú dices. Es lo que el cliente siente que gana."</td></tr>
+              <tr><td>Cierre + CTA</td><td>18–22 s</td><td>Logo DC + "¿Cuéntanos qué te elige tu cliente?"</td><td>"Cuéntanos en comentarios 👇"</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>Lo que cierra una venta no es lo que tú dices que ofreces. Es lo que el cliente siente que gana al trabajar contigo.<br><br>¿Sabes exactamente qué es lo que tus clientes valoran más de tu empresa? Cuéntanos 👇<br><br><span class="b-ht">#DCConsultorias #PropuestaDeValor #MarketingAplicado #PymesConEstrategia #EstrategiaComercial</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">J05</span> Post LI · Mié 11 jun · "Una propuesta de valor débil obliga a competir por precio"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primera línea</label>Una propuesta de valor débil obliga a competir por precio. Y esa es una guerra que nadie quiere ganar.</div>
+          <div class="b-block"><label>Cuerpo del post</label>Cuando una empresa no sabe comunicar claramente qué la diferencia, el cliente compara. Y cuando compara sin criterio claro, elige por precio.<br><br>¿Cómo se construye una propuesta de valor que funcione?<br><br>Responde estas tres preguntas:<br>1. ¿A quién le hablo exactamente? (No "cualquier empresa". Un perfil concreto.)<br>2. ¿Qué problema específico resuelvo para esa persona? (No qué haces. Qué resuelves.)<br>3. ¿Por qué yo y no la competencia? (No "calidad y servicio". Algo real y verificable.)<br><br>Si esas tres respuestas no caben en dos frases claras, la propuesta de valor necesita trabajo.<br><br>El precio deja de ser el argumento cuando el cliente entiende el valor con claridad.</div>
+          <div class="b-block cta"><label>CTA</label>¿Tu empresa tiene clara su propuesta de valor? ¿Cómo la comunica? 👇<br><br><span class="b-ht">#DCConsultorias #PropuestaDeValor #EstrategiaComercial #MarketingYVentas #Pymes #LiderazgoEmpresarial</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">J06</span> Carrusel IG · Vie 13 jun · "Cómo construir tu propuesta de valor en 4 pasos"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Portada — Slide 1</label>"Cómo construir una propuesta de valor clara en 4 pasos. Sin fórmulas genéricas." · "Guarda y aplícalo esta semana 📌"</div>
+          <table class="b-tbl">
+            <thead><tr><th>Slide</th><th>Título</th><th>Contenido del slide</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Portada</td><td>"Cómo construir tu propuesta de valor en 4 pasos." Subtexto: "Si no puedes explicarla en 2 frases, necesita trabajo."</td></tr>
+              <tr><td>2</td><td>¿Qué es realmente?</td><td>Una propuesta de valor no es tu slogan. Es la razón concreta por la que un cliente específico prefiere comprarte a ti y no a otro.</td></tr>
+              <tr><td>3</td><td>Paso 1 · Define tu cliente</td><td>¿A quién le hablas? No "empresas medianas". Sé específico: sector, tamaño, momento del negocio, cargo de quien decide. Ejemplo: Director comercial de pyme manufacturera con equipo de ventas de 3–10 personas.</td></tr>
+              <tr><td>4</td><td>Paso 2 · Nombra el problema</td><td>¿Qué problema real tiene ese cliente? No el síntoma. La causa. Ejemplo: No es "vendemos poco", es "no tenemos un proceso comercial definido que permita escalar."</td></tr>
+              <tr><td>5</td><td>Paso 3 · Define el resultado</td><td>¿Qué logra el cliente después de trabajar contigo? No lo que haces. El resultado concreto que obtiene. Ejemplo: "Un equipo comercial con proceso claro, KPIs definidos y seguimiento real."</td></tr>
+              <tr><td>6</td><td>Paso 4 · Comprueba la diferencia</td><td>¿Por qué tú y no la competencia? (Metodología, experiencia, forma de acompañar, resultado verificable.) Evita: "calidad y compromiso." Busca algo concreto y diferenciador.</td></tr>
+              <tr><td>7</td><td>Ejemplo real</td><td>DC Consultorías: Acompañamos a pymes con equipos comerciales a ordenar su proceso de ventas y marketing para que crezcan de manera sostenible, con metodología probada y sin depender de la improvisación.</td></tr>
+              <tr><td>8</td><td>La prueba</td><td>Si tu propuesta de valor no la puede repetir tu equipo de ventas de memoria… no está funcionando.</td></tr>
+              <tr><td>9</td><td>Reflexión</td><td>¿Tu empresa tiene una propuesta de valor que el cliente entiende inmediatamente?</td></tr>
+              <tr><td>10</td><td>CTA</td><td>"En DC Consultorías te ayudamos a construirla y a conectarla con tu estrategia comercial. ¿Hablamos?" + Logo + www.dcconsultorias.com</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>Si no puedes explicar tu propuesta de valor en dos frases claras, el cliente tampoco puede entenderla.<br><br>Guarda este carrusel y trabájalo con tu equipo esta semana 📌<br><br><span class="b-ht">#DCConsultorias #PropuestaDeValor #EstrategiaComercial #PymesConEstrategia #MarketingAplicado</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- SEMANA 3 JUNIO — IA OBLIGATORIA -->
+  <div class="semana-card">
+    <div class="semana-header">
+      <strong>Semana 3 — Junio</strong>
+      <span class="sem-fecha">16 al 21 de junio · Eje: Segmentación + 🤖 IA Obligatoria</span>
+    </div>
+    <div class="semana-foco">Objetivo semanal: <strong>Educar sobre segmentación de clientes + activar la línea obligatoria de IA aplicada a pymes. Semana de alto valor percibido.</strong></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Canal</th>
+            <th>Formato</th>
+            <th>Pilar</th>
+            <th>Hook / Tema</th>
+            <th>Variable</th>
+            <th>CTA</th>
+            <th>KPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fecha-cell">Lun 16</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-reel">Reel</span></td>
+            <td>P2: Marketing estratégico</td>
+            <td class="hook-cell">"Segmentar en teoría y vender a todos en la práctica. Ese es el error más costoso en el marketing de las pymes."</td>
+            <td><span class="var-tag v-atr">Atracción</span></td>
+            <td class="cta-cell">¿Te identificas? Comenta</td>
+            <td class="kpi-cell">Alcance · Reproducción</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Mié 18</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-post">Post estratégico</span></td>
+            <td>P2/P1: Marketing + Orden</td>
+            <td class="hook-cell">"La empresa que no segmenta termina hablándole a todos y conectando con pocos."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">¿Tienen claros sus segmentos prioritarios?</td>
+            <td class="kpi-cell">Impresiones · DMs</td>
+          </tr>
+          <tr class="ia-row">
+            <td class="fecha-cell" style="color:#5b21b6">Vie 20 🤖</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-ia">Carrusel IA</span></td>
+            <td>P3: IA aplicada a pymes</td>
+            <td class="hook-cell">"3 herramientas de IA para conocer mejor a tu cliente y ajustar tu mensaje comercial sin ser experto en datos."</td>
+            <td><span class="var-tag v-ia">IA · Obligatoria</span></td>
+            <td class="cta-cell">Guarda · Escríbenos</td>
+            <td class="kpi-cell">Guardados · DMs recibidos</td>
+          </tr>
+          <tr class="ia-row">
+            <td class="fecha-cell" style="color:#5b21b6">Vie 20 🤖</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-ia">Post IA</span></td>
+            <td>P3: IA aplicada a pymes</td>
+            <td class="hook-cell">"Cómo la IA puede ayudarte a entender mejor a tus clientes y mejorar tu propuesta de valor. Sin necesidad de ser experto en tecnología."</td>
+            <td><span class="var-tag v-ia">IA · Obligatoria</span></td>
+            <td class="cta-cell">¿En qué etapa está tu empresa con IA?</td>
+            <td class="kpi-cell">Comentarios · DMs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="borradores-section">
+      <div class="borradores-title">📝 Borradores — Semana 3 Junio (incluye 🤖 IA Obligatoria)</div>
+
+      <details class="borrador">
+        <summary><span class="b-num">J07</span> Reel IG · Lun 16 jun · "Segmentar en teoría y vender a todos en la práctica"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primer frame</label>"Segmentar en teoría y vender a todos en la práctica. Ese es el error más costoso en el marketing de las pymes."</div>
+          <table class="b-tbl">
+            <thead><tr><th>Segmento</th><th>Tiempo</th><th>Texto en pantalla</th><th>Voz / Locución</th></tr></thead>
+            <tbody>
+              <tr><td>Apertura</td><td>0–3 s</td><td>"¿Tu empresa tiene definidos sus segmentos de clientes?"</td><td>—</td></tr>
+              <tr><td>Problema</td><td>3–10 s</td><td>Viñetas: Segmento "definido" en el plan · Vendedores llaman a todo el mundo · Contenido genérico para nadie</td><td>"Muchas pymes tienen el ejercicio de segmentación hecho. Pero el equipo opera como si no existiera."</td></tr>
+              <tr><td>Consecuencia</td><td>10–18 s</td><td>3 consecuencias: Más esfuerzo, menos conversión / Mensajes que no conectan / Clientes que no vuelven</td><td>"Cuando hablas con todos, conectas con pocos. Y cuando conectas con pocos, vendes menos de lo que podrías."</td></tr>
+              <tr><td>Cierre + CTA</td><td>18–22 s</td><td>Logo DC + "¿Te identificas? Comenta 👇"</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>El problema no es no tener el segmento definido. El problema es no operar con base en él.<br><br>Si tu equipo vende a todo el mundo, no está vendiendo con estrategia. Está improvisando.<br><br>¿Te suena familiar? Comenta 👇<br><br><span class="b-ht">#DCConsultorias #EstrategiaComercial #PymesConEstrategia #MarketingAplicado #VentasConSistema</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">J08</span> Post LI · Mié 18 jun · "La empresa que no segmenta termina hablándole a todos"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primera línea</label>La empresa que no segmenta termina hablándole a todos y conectando con pocos.</div>
+          <div class="b-block"><label>Cuerpo del post</label>Y conectar con pocos en marketing tiene un costo real en ventas.<br><br>Segmentar no es solo un ejercicio estratégico. Es una decisión operativa que debe verse reflejada en cómo prospectamos, cómo hablamos y qué contenido producimos.<br><br>Cuando una empresa tiene sus segmentos claros y opera con base en ellos:<br>✔ La prospección es más eficiente: el equipo sabe exactamente a quién llamar.<br>✔ El mensaje es más preciso: el cliente siente que le hablan a él.<br>✔ El contenido convierte mejor: porque responde preguntas reales de ese perfil.<br>✔ La conversión mejora: porque hay menos fricción en el proceso de decisión.<br><br>El ejercicio de segmentación no termina cuando llena el documento. Termina cuando el equipo opera con base en él.</div>
+          <div class="b-block cta"><label>CTA</label>¿Tienen claros sus segmentos prioritarios en tu empresa? ¿Cómo lo trabajan operativamente? 👇<br><br><span class="b-ht">#DCConsultorias #EstrategiaComercial #GestionComercial #MarketingYVentas #PymesConEstrategia</span></div>
+        </div>
+      </details>
+
+      <details class="borrador ia-borrador">
+        <summary><span class="b-num ia">J09 🤖</span> Carrusel IA · IG · Vie 20 jun · "3 herramientas de IA para conocer mejor a tu cliente"</summary>
+        <div class="b-inner">
+          <div class="b-block ia"><label>Portada — Slide 1 (Pieza IA Obligatoria)</label>"3 herramientas de IA para conocer mejor a tu cliente y ajustar tu mensaje comercial. Sin ser experto en datos." · "Guarda este carrusel 📌"</div>
+          <table class="b-tbl ia">
+            <thead><tr><th>Slide</th><th>Título</th><th>Contenido del slide</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Portada</td><td>"3 herramientas de IA para conocer mejor a tu cliente." Subtexto: "Ya están disponibles. Ya son asequibles. Solo necesitas saber usarlas."</td></tr>
+              <tr><td>2</td><td>¿Por qué importa?</td><td>Una de las limitaciones más comunes en pymes es no tener suficiente información del cliente para tomar decisiones comerciales. La IA ya resuelve eso.</td></tr>
+              <tr><td>3</td><td>Herramienta 1 · ChatGPT / Claude</td><td>Cómo usarla: Carga tus conversaciones con clientes, reseñas, feedbacks o CRM exportado. Pídele que identifique patrones: ¿qué objeciones repiten? ¿qué valoran más? ¿qué los frena al comprar? → Resultado: insights de cliente en minutos, sin analista de datos.</td></tr>
+              <tr><td>4</td><td>Herramienta 1 · Ejemplo práctico</td><td>Prompt: "Analiza estas 30 respuestas de clientes y dime: ¿cuáles son las 3 razones principales por las que compran? ¿y las 3 principales objeciones antes de comprar?"</td></tr>
+              <tr><td>5</td><td>Herramienta 2 · Google Analytics + Gemini</td><td>Cómo usarla: Integra Gemini con tu GA4. Pregúntale en lenguaje natural: ¿qué páginas generan más contactos? ¿qué contenido retiene más? ¿qué audiencia convierte mejor? → Resultado: decisiones de contenido basadas en comportamiento real.</td></tr>
+              <tr><td>6</td><td>Herramienta 2 · Para pymes sin GA4</td><td>Si no tienes Analytics avanzado: exporta los datos básicos de tu sitio (visitas, páginas, fuentes) y cárgalos en ChatGPT. Pídele que te muestre qué tendencias identifica.</td></tr>
+              <tr><td>7</td><td>Herramienta 3 · NotebookLM (Google)</td><td>Cómo usarla: Carga documentos internos: propuestas enviadas, contratos, correos de clientes, informes. Hazle preguntas sobre ese material. → Resultado: síntesis de lo que tus propios registros dicen sobre tus clientes.</td></tr>
+              <tr><td>8</td><td>Lo que estas herramientas NO hacen</td><td>No reemplazan el criterio comercial. No inventan información que no existe. Solo amplifican lo que ya tienes. Pre-condición: debes tener datos mínimos registrados de tus clientes.</td></tr>
+              <tr><td>9</td><td>Reflexión</td><td>¿Tu empresa tiene información de clientes suficiente para que la IA la analice? ¿O aún opera con intuición?</td></tr>
+              <tr><td>10</td><td>CTA</td><td>"En DC Consultorías te ayudamos a ordenar la información comercial de tu empresa para poder usarla. ¿Hablamos?" + Logo + www.dcconsultorias.com</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>La IA no es solo para grandes empresas. Ya hay herramientas gratuitas o de bajo costo que cualquier pyme puede usar para entender mejor a sus clientes.<br><br>El primer paso es tener los datos mínimos organizados. El segundo es saber qué preguntar.<br><br>Guarda este carrusel 📌 y escríbenos si quieres saber cómo aplicarlo en tu empresa.<br><br><span class="b-ht ia">#DCConsultorias #IAparaPymes #HerramientasDeIA #VentasConIA #IAenVentas #PymesConEstrategia #MarketingAplicado</span></div>
+        </div>
+      </details>
+
+      <details class="borrador ia-borrador">
+        <summary><span class="b-num ia">J10 🤖</span> Post IA · LI · Vie 20 jun · "La IA ya puede ayudarte a entender mejor a tus clientes"</summary>
+        <div class="b-inner">
+          <div class="b-block ia"><label>Hook — Primera línea (Pieza IA Obligatoria)</label>Una de las limitaciones más comunes en pymes es no tener suficiente información del cliente para tomar mejores decisiones comerciales. La IA ya resuelve eso.</div>
+          <div class="b-block"><label>Cuerpo del post</label>No necesitas un equipo de datos ni una inversión grande.<br>Con las herramientas que ya existen hoy, una pyme puede:<br><br>✔ Analizar conversaciones con clientes para encontrar patrones de objeciones y motivaciones de compra.<br>✔ Interpretar el comportamiento del visitante en su sitio web sin ser analista digital.<br>✔ Sintetizar documentos internos (propuestas, correos, CRM) para entender qué funciona y qué no.<br>✔ Generar perfiles de cliente más precisos con base en datos reales, no supuestos.<br><br>La pre-condición es una sola: debes tener datos mínimos registrados.<br>La IA amplifica lo que ya tienes. No inventa lo que no existe.<br><br>¿Tu empresa tiene el orden comercial mínimo para aprovechar estas herramientas?</div>
+          <div class="b-block cta"><label>CTA</label>¿Tu empresa ya está usando IA en sus análisis comerciales? Cuéntame qué herramientas 👇 O escríbeme por DM si quieres explorar cómo empezar.<br><br><span class="b-ht ia">#DCConsultorias #IAparaPymes #HerramientasDeIA #VentasConIA #AutomatizacionComercial #GestionComercial #Pymes</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- SEMANA 4 JUNIO -->
+  <div class="semana-card">
+    <div class="semana-header">
+      <strong>Semana 4 — Junio</strong>
+      <span class="sem-fecha">23 al 28 de junio · Eje: Contenido con intención comercial + Conversión</span>
+    </div>
+    <div class="semana-foco">Objetivo semanal: <strong>Cerrar el mes conectando contenido con resultados. Activar conversaciones comerciales directas hacia DC. Semana de conversión natural.</strong></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Canal</th>
+            <th>Formato</th>
+            <th>Pilar</th>
+            <th>Hook / Tema</th>
+            <th>Variable</th>
+            <th>CTA</th>
+            <th>KPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fecha-cell">Lun 23</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-reel">Reel</span></td>
+            <td>P2: Marketing estratégico</td>
+            <td class="hook-cell">"El contenido que genera ventas tiene una sola característica: claridad de propósito. No es el más bonito. Es el más útil."</td>
+            <td><span class="var-tag v-atr">Atracción</span></td>
+            <td class="cta-cell">Comenta qué tipo de contenido publicas</td>
+            <td class="kpi-cell">Reproducción · Guardados</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Mié 25</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-post">Post conversión</span></td>
+            <td>P1: Orden comercial</td>
+            <td class="hook-cell">"¿Tu empresa sabe exactamente a quién le habla, qué le promete y cómo lo entrega? Ese es el primer diagnóstico."</td>
+            <td><span class="var-tag v-con">Conversión</span></td>
+            <td class="cta-cell">Escríbeme por DM o www.dcconsultorias.com</td>
+            <td class="kpi-cell">DMs · Visitas web</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Vie 27</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-estatico">Post estático</span></td>
+            <td>P5: Liderazgo empresarial</td>
+            <td class="hook-cell">Frase: <em>"El marketing no reemplaza la venta. La potencia."</em></td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">www.dcconsultorias.com</td>
+            <td class="kpi-cell">Compartidos · Alcance</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="borradores-section">
+      <div class="borradores-title">📝 Borradores — Semana 4 Junio (Cierre · Conversión)</div>
+
+      <details class="borrador">
+        <summary><span class="b-num">J11</span> Reel IG · Lun 23 jun · "El contenido que genera ventas tiene claridad de propósito"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primer frame</label>"¿Por qué hay empresas que publican mucho y venden poco? Porque hay una diferencia entre contenido activo y contenido útil."</div>
+          <table class="b-tbl">
+            <thead><tr><th>Segmento</th><th>Tiempo</th><th>Texto en pantalla</th><th>Voz / Locución</th></tr></thead>
+            <tbody>
+              <tr><td>Apertura</td><td>0–3 s</td><td>"¿Publicas mucho pero conviertes poco?"</td><td>—</td></tr>
+              <tr><td>Contraste</td><td>3–12 s</td><td>Columna A: Contenido sin propósito (bonito, frecuente, sin dirección) · Columna B: Contenido con intención (responde una duda real, mueve hacia una acción)</td><td>"El problema no es la cantidad de publicaciones. Es la claridad de su propósito."</td></tr>
+              <tr><td>Clave</td><td>12–18 s</td><td>"El contenido que genera ventas tiene una sola característica: claridad de propósito. No es el más bonito. Es el más útil para quien decide comprar."</td><td>—</td></tr>
+              <tr><td>CTA</td><td>18–22 s</td><td>Logo DC + "¿Qué tipo de contenido publicas hoy? Comenta ↓"</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>Publicar más no es la solución. Publicar con propósito comercial claro, sí.<br><br>Cada pieza de contenido debería responder esta pregunta: ¿a quién ayudo a decidir con esto?<br><br>¿Qué tipo de contenido produce tu empresa hoy? Cuéntanos 👇<br><br><span class="b-ht">#DCConsultorias #EstrategiaDeContenido #MarketingYVentas #PymesConEstrategia #ContenidoQueVende</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">J12</span> Post LI · Mié 25 jun · Conversión · "¿Tu empresa sabe a quién le habla, qué promete y cómo lo entrega?"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primera línea</label>¿Tu empresa sabe exactamente a quién le habla, qué le promete y cómo lo entrega? Ese es el primer diagnóstico.</div>
+          <div class="b-block"><label>Cuerpo del post</label>Lo llamo la triple claridad comercial.<br><br>Y cuando alguna de las tres falla, el marketing trabaja más de lo que debería y los resultados llegan más despacio.<br><br>→ Sin claridad sobre a quién: el mensaje se vuelve genérico y no conecta.<br>→ Sin claridad sobre qué se promete: el cliente no sabe qué esperar y compara por precio.<br>→ Sin claridad sobre cómo se entrega: hay fricción en la experiencia y los referidos disminuyen.<br><br>En DC Consultorías trabajamos exactamente eso con nuestros clientes: ordenar estas tres dimensiones para que el crecimiento no dependa de la improvisación ni del esfuerzo individual.<br><br>Si tu empresa llega a julio sin esta claridad, el segundo semestre será más difícil de lo necesario.</div>
+          <div class="b-block cta"><label>CTA (Conversión directa)</label>¿Quieres revisar cómo está tu empresa en estas tres dimensiones? Escríbeme por DM o visítanos en www.dcconsultorias.com — empezamos con un diagnóstico sin costo.<br><br><span class="b-ht">#DCConsultorias #ConsultoriaComercial #EstrategiaComercial #OrdenComercial #PymesConEstrategia #Pymes</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">J13</span> Post Estático IG · Vie 27 jun · Frase de cierre mensual</summary>
+        <div class="b-inner">
+          <div class="b-block frase">"El marketing no reemplaza la venta. La potencia."</div>
+          <div class="b-block"><label>Diseño sugerido</label>Fondo degradado azul oscuro (#1e3a8a → #1d4ed8). Frase en blanco, tipografía grande. Logo DC pequeño en esquina inferior derecha. Línea divisoria fina decorativa encima de la frase. Formato cuadrado 1:1.</div>
+          <div class="b-block cta"><label>Caption Instagram</label>El marketing no es el reemplazo de un buen proceso de ventas.<br>Es lo que hace que ese proceso funcione mejor.<br><br>Con una estrategia de marketing alineada a ventas, el equipo comercial llega a las conversaciones con la mitad del trabajo hecho.<br><br>¿Tienes las dos cosas alineadas en tu empresa?<br><br>🔗 www.dcconsultorias.com<br><br><span class="b-ht">#DCConsultorias #MarketingYVentas #EstrategiaComercial #LiderazgoEmpresarial #PymesConEstrategia</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       JULIO 2026
+  ════════════════════════════════════════ -->
+  <div class="mes-header julio">
+    <div>
+      <div class="mes-pill julio">Julio 2026</div>
+      <h2>Del dato a la decisión comercial</h2>
+      <div class="narrativa">Narrativa del mes</div>
+      <div class="foco">Equipar a las pymes para tomar decisiones con datos reales de ventas. Posicionar a DC como la consultora que convierte la información dispersa en rutas de acción claras. Mes con alta densidad de autoridad y conversión.</div>
+    </div>
+    <div class="mes-stats">
+      <div class="mes-stat"><div class="num">13</div><div class="lbl">Piezas</div></div>
+      <div class="mes-stat"><div class="num">5</div><div class="lbl">Semanas</div></div>
+      <div class="mes-stat"><div class="num">2</div><div class="lbl">Piezas IA</div></div>
+      <div class="mes-stat"><div class="num">7</div><div class="lbl">Instagram</div></div>
+      <div class="mes-stat"><div class="num">6</div><div class="lbl">LinkedIn</div></div>
+    </div>
+  </div>
+
+  <!-- SEMANA 1 JULIO -->
+  <div class="semana-card">
+    <div class="semana-header">
+      <strong>Semana 1 — Julio</strong>
+      <span class="sem-fecha">30 junio al 5 julio · Eje: Los datos que ya tienes y no estás leyendo</span>
+    </div>
+    <div class="semana-foco">Objetivo semanal: <strong>Abrir el mes con una pregunta directa al empresario sobre sus decisiones comerciales. Crear conciencia sobre el valor de los datos internos.</strong></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Canal</th>
+            <th>Formato</th>
+            <th>Pilar</th>
+            <th>Hook / Tema</th>
+            <th>Variable</th>
+            <th>CTA</th>
+            <th>KPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fecha-cell">Mié 1</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-reel">Reel</span></td>
+            <td>P1: Orden comercial</td>
+            <td class="hook-cell">"¿Tu empresa toma decisiones comerciales con datos o con intuición? La respuesta honesta cambia todo."</td>
+            <td><span class="var-tag v-atr">Atracción</span></td>
+            <td class="cta-cell">Responde en comentarios</td>
+            <td class="kpi-cell">Alcance · Comentarios</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Jue 2</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-post">Post estratégico</span></td>
+            <td>P3: Ventas y clientes</td>
+            <td class="hook-cell">"Los datos de ventas cuentan una historia que la empresa debe aprender a leer. El problema es que pocos se sientan a leerla."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">¿Con qué datos toma decisiones tu empresa?</td>
+            <td class="kpi-cell">Comentarios · Guardados</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Sáb 4</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-carrusel">Carrusel</span></td>
+            <td>P1: Orden comercial</td>
+            <td class="hook-cell">"6 indicadores comerciales que toda pyme debería revisar cada mes. Con ejemplos reales."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">Guarda esta guía</td>
+            <td class="kpi-cell">Guardados · DMs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="borradores-section">
+      <div class="borradores-title">📝 Borradores — Semana 1 Julio</div>
+
+      <details class="borrador">
+        <summary><span class="b-num">L01</span> Reel IG · Mié 1 jul · "¿Tu empresa toma decisiones con datos o con intuición?"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primer frame</label>"¿Tu empresa toma decisiones comerciales con datos o con intuición? La respuesta honesta cambia todo."</div>
+          <table class="b-tbl">
+            <thead><tr><th>Segmento</th><th>Tiempo</th><th>Texto en pantalla</th><th>Voz / Locución</th></tr></thead>
+            <tbody>
+              <tr><td>Apertura</td><td>0–3 s</td><td>"¿Datos o intuición? La respuesta honesta cambia todo."</td><td>—</td></tr>
+              <tr><td>Problema</td><td>3–10 s</td><td>Viñetas: "Parece que vamos bien" / "Creemos que ese cliente volverá" / "Intuimos que julio va a cerrar fuerte"</td><td>"La intuición ayuda. Pero no escala. Y en pymes con equipos pequeños, los datos hacen lo que la intuición no puede."</td></tr>
+              <tr><td>Consecuencias</td><td>10–18 s</td><td>3 consecuencias: Decisiones lentas / Recursos mal asignados / No saber qué está fallando realmente</td><td>"Una empresa sin indicadores comerciales trabaja con percepción. No con evidencia."</td></tr>
+              <tr><td>CTA</td><td>18–22 s</td><td>Logo DC + "¿Datos o intuición en tu empresa? Responde en comentarios ↓"</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>No es que la intuición esté mal. Es que cuando el negocio crece, la intuición ya no es suficiente.<br><br>¿Tu empresa toma decisiones comerciales con datos o con "nos parece que..."? Responde honestamente 👇<br><br><span class="b-ht">#DCConsultorias #GestionComercial #OrdenComercial #VentasConSistema #PymesConEstrategia</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">L02</span> Post LI · Jue 2 jul · "Los datos de ventas cuentan una historia que la empresa debe aprender a leer"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primera línea</label>Los datos de ventas cuentan una historia que la empresa debe aprender a leer. El problema es que muy pocas se sientan a hacerlo.</div>
+          <div class="b-block"><label>Cuerpo del post</label>No porque no quieran. Sino porque no saben qué buscar.<br><br>Cuando una empresa analiza sus datos de ventas con regularidad, encuentra respuestas que de otra forma tardaría meses en descubrir:<br><br>✔ ¿Qué tipo de cliente tiene mayor ticket promedio?<br>✔ ¿Qué producto o servicio tiene el ciclo de venta más corto?<br>✔ ¿Qué clientes llevan más de 90 días sin comprar?<br>✔ ¿Qué mes del año concentra la mayor cantidad de cierres?<br><br>Esa información ya existe en tu CRM, en tu facturación, en tus reportes.<br>El reto no es conseguir los datos. Es aprender a leerlos con intención.<br><br>Y a partir de julio, ese hábito puede cambiar la forma en que tu empresa toma decisiones comerciales.</div>
+          <div class="b-block cta"><label>CTA</label>¿Con qué datos toma decisiones comerciales tu empresa hoy? 👇<br><br><span class="b-ht">#DCConsultorias #GestionComercial #OrdenComercial #EstrategiaComercial #VentasConSistema #Pymes</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">L03</span> Carrusel IG · Sáb 4 jul · "6 indicadores comerciales que toda pyme debería revisar cada mes"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Portada — Slide 1</label>"6 indicadores comerciales que toda pyme debería revisar cada mes. Con ejemplos reales." · "Guarda esta guía 📌"</div>
+          <table class="b-tbl">
+            <thead><tr><th>Slide</th><th>Indicador</th><th>Contenido del slide</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Portada</td><td>"6 indicadores que tu equipo comercial debe revisar cada mes." Subtexto: "Si no los mides, no los puedes mejorar."</td></tr>
+              <tr><td>2</td><td>¿Por qué importa?</td><td>Un indicador no es un número. Es una señal. Te dice qué está funcionando, qué necesita atención y dónde hay una oportunidad que estás dejando pasar.</td></tr>
+              <tr><td>3</td><td>Indicador 1 · Tasa de conversión</td><td>¿De cada 10 prospectos contactados, cuántos se convierten en clientes? Si es menor al 20%, hay un problema de proceso o de calificación del prospecto.</td></tr>
+              <tr><td>4</td><td>Indicador 2 · Clientes activos vs. inactivos</td><td>¿Cuántos clientes compraron en los últimos 90 días? ¿Y cuántos no? Este dato te dice cuánta cartera tienes en riesgo de perderse.</td></tr>
+              <tr><td>5</td><td>Indicador 3 · Ticket promedio</td><td>¿Cuánto compra en promedio cada cliente por transacción? Si baja mes a mes, puede ser señal de desestimación del valor o de competencia por precio.</td></tr>
+              <tr><td>6</td><td>Indicador 4 · Ciclo de venta</td><td>¿Cuántos días pasan desde el primer contacto hasta el cierre? Ciclos largos pueden significar propuestas poco claras o proceso de decisión del cliente no acompañado.</td></tr>
+              <tr><td>7</td><td>Indicador 5 · Tasa de recompra</td><td>¿Cuántos clientes volvieron a comprar en los últimos 6 meses? Un negocio saludable tiene recompra. Si es baja, la fidelización está fallando.</td></tr>
+              <tr><td>8</td><td>Indicador 6 · Seguimientos realizados</td><td>¿Cuántos seguimientos hace el equipo por semana? ¿Y cuántos de esos generan una acción del cliente? El seguimiento es el músculo más descuidado en pymes.</td></tr>
+              <tr><td>9</td><td>Reflexión</td><td>¿Cuántos de estos 6 indicadores tiene tu empresa definidos y revisados mensualmente?</td></tr>
+              <tr><td>10</td><td>CTA</td><td>"En DC Consultorías te ayudamos a definir, medir y actuar sobre tus indicadores comerciales. ¿Hablamos?" + Logo + www.dcconsultorias.com</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>Si no mides, no puedes mejorar. Y si mides sin saber qué hacer con los datos, tampoco.<br><br>Guarda esta guía y revisa cuántos de estos indicadores tiene tu empresa hoy 📌<br><br><span class="b-ht">#DCConsultorias #GestionComercial #VentasConSistema #OrdenComercial #PymesConEstrategia #EstrategiaComercial</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- SEMANA 2 JULIO -->
+  <div class="semana-card">
+    <div class="semana-header">
+      <strong>Semana 2 — Julio</strong>
+      <span class="sem-fecha">7 al 13 de julio · Eje: Clientes inactivos — la oportunidad que ya tienes</span>
+    </div>
+    <div class="semana-foco">Objetivo semanal: <strong>Visibilizar el valor de los clientes inactivos como oportunidad de crecimiento inmediato. Posicionar la recuperación de clientes como estrategia, no como persecución.</strong></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Canal</th>
+            <th>Formato</th>
+            <th>Pilar</th>
+            <th>Hook / Tema</th>
+            <th>Variable</th>
+            <th>CTA</th>
+            <th>KPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fecha-cell">Lun 7</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-reel">Reel</span></td>
+            <td>P3: Ventas y clientes</td>
+            <td class="hook-cell">"Los clientes que dejaron de comprar no siempre están perdidos. A veces solo están olvidados."</td>
+            <td><span class="var-tag v-atr">Atracción</span></td>
+            <td class="cta-cell">¿Cuántos tienes tú? Comenta</td>
+            <td class="kpi-cell">Reproducción · Comentarios</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Mié 9</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-post">Post estratégico</span></td>
+            <td>P3: Ventas y clientes</td>
+            <td class="hook-cell">"Recuperar un cliente inactivo cuesta hasta cinco veces menos que adquirir uno nuevo. Pero pocas empresas tienen una ruta para hacerlo."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">¿Cuándo revisaron su base de inactivos?</td>
+            <td class="kpi-cell">Impresiones · DMs</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Vie 11</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-carrusel">Carrusel</span></td>
+            <td>P3: Ventas y clientes</td>
+            <td class="hook-cell">"Cómo recuperar clientes sin sonar invasivo: guía práctica en 5 pasos."</td>
+            <td><span class="var-tag v-con">Conversión</span></td>
+            <td class="cta-cell">Guarda · Escríbenos si necesitas ayuda</td>
+            <td class="kpi-cell">Guardados · DMs · Visitas web</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="borradores-section">
+      <div class="borradores-title">📝 Borradores — Semana 2 Julio</div>
+
+      <details class="borrador">
+        <summary><span class="b-num">L04</span> Reel IG · Lun 7 jul · "Los clientes que dejaron de comprar no siempre están perdidos"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primer frame</label>"Los clientes que dejaron de comprar no siempre están perdidos. A veces solo están olvidados."</div>
+          <table class="b-tbl">
+            <thead><tr><th>Segmento</th><th>Tiempo</th><th>Texto en pantalla</th><th>Voz / Locución</th></tr></thead>
+            <tbody>
+              <tr><td>Apertura</td><td>0–3 s</td><td>"¿Cuántos clientes tienes que no te compran hace 3 meses?"</td><td>—</td></tr>
+              <tr><td>Realidad</td><td>3–10 s</td><td>3 viñetas: No se fueron con la competencia / No están molestos / Solo no recibieron una razón para volver</td><td>"La mayoría de clientes inactivos no tomó una decisión de irse. Simplemente dejaron de recibir atención."</td></tr>
+              <tr><td>Contraste</td><td>10–18 s</td><td>Recuperar un cliente inactivo cuesta 5× menos que adquirir uno nuevo. Pero el 80% de pymes no tiene una ruta para hacerlo.</td><td>"La oportunidad más cercana que tiene tu empresa puede estar en su propia base de datos."</td></tr>
+              <tr><td>CTA</td><td>18–22 s</td><td>Logo DC + "¿Cuántos inactivos tiene tu empresa? Comenta ↓"</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>Antes de buscar nuevos clientes, pregúntate: ¿cuántos clientes que ya compraron dejaron de hacerlo?<br><br>Esa base de datos ya tiene confianza. Solo necesita atención.<br><br>¿Cuántos inactivos tiene tu empresa hoy? 👇<br><br><span class="b-ht">#DCConsultorias #GestionComercial #Fidelizacion #VentasConSistema #PymesConEstrategia #EquipoComercial</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">L05</span> Post LI · Mié 9 jul · "Recuperar un cliente inactivo cuesta 5× menos que adquirir uno nuevo"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primera línea</label>Recuperar un cliente inactivo cuesta hasta cinco veces menos que adquirir uno nuevo. Pero pocas empresas tienen una ruta para hacerlo.</div>
+          <div class="b-block"><label>Cuerpo del post</label>¿Por qué la mayoría de pymes no trabaja activamente su base de inactivos?<br><br>✔ No tienen identificados cuáles son sus clientes inactivos (no hay criterio definido).<br>✔ No tienen un proceso de reactivación: ni mensaje, ni frecuencia, ni responsable.<br>✔ Asumen que si el cliente quiere volver, volverá solo.<br>✔ Están enfocados en conseguir nuevos clientes y descuidan a los que ya confían en ellos.<br><br>El resultado: una cartera que se achica despacio y una empresa que trabaja más para mantener el mismo nivel de ventas.<br><br>La reactivación de inactivos no es perseguir clientes. Es demostrarle a alguien que ya te conoce que sigues siendo la mejor opción para su problema.</div>
+          <div class="b-block cta"><label>CTA</label>¿Cuándo fue la última vez que tu empresa revisó su base de clientes inactivos con intención de reactivarlos? 👇<br><br><span class="b-ht">#DCConsultorias #GestionComercial #VentasConSistema #Fidelizacion #OrdenComercial #PymesConEstrategia</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">L06</span> Carrusel IG · Vie 11 jul · "Cómo recuperar clientes sin sonar invasivo: 5 pasos"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Portada — Slide 1</label>"Cómo recuperar clientes inactivos sin sonar invasivo. Guía práctica en 5 pasos." · "Guarda y escríbenos si necesitas ayuda 📌"</div>
+          <table class="b-tbl">
+            <thead><tr><th>Slide</th><th>Paso</th><th>Contenido del slide</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Portada</td><td>"Cómo recuperar clientes inactivos sin sonar invasivo." Subtexto: "5 pasos concretos para hacerlo con estrategia."</td></tr>
+              <tr><td>2</td><td>Antes de empezar</td><td>Define qué es un cliente "inactivo" en tu empresa. ¿90 días sin comprar? ¿180? Tener ese criterio claro es el punto de partida.</td></tr>
+              <tr><td>3</td><td>Paso 1 · Identificar</td><td>Extrae de tu CRM o base de datos los clientes que cumplan el criterio de inactividad. Organízalos por: último monto de compra / frecuencia histórica / tipo de producto o servicio adquirido.</td></tr>
+              <tr><td>4</td><td>Paso 2 · Clasificar</td><td>No todos los inactivos son iguales. Clasifícalos en: Alta prioridad (cliente de alto valor que dejó de comprar) / Media (comprador frecuente con pausa) / Baja (compra única histórica).</td></tr>
+              <tr><td>5</td><td>Paso 3 · Investigar</td><td>Antes de contactar: ¿Hubo algún problema de servicio? ¿Cambió su situación? ¿Un competidor lo abordó? Este paso evita errores de comunicación y mensajes fuera de contexto.</td></tr>
+              <tr><td>6</td><td>Paso 4 · Contactar con propósito</td><td>No contactes para "ver si necesita algo." Contacta con un motivo concreto: novedad, oferta específica, solución a un problema que ya conoces de ese cliente. El contacto con valor no se siente invasivo.</td></tr>
+              <tr><td>7</td><td>Ejemplo de mensaje</td><td>"Hola [nombre], sé que llevas un tiempo sin comprar [producto/servicio X]. Justo lanzamos [novedad/mejora] y pensé en ti porque [razón específica]. ¿Tienes 10 minutos para conversar?"</td></tr>
+              <tr><td>8</td><td>Paso 5 · Documentar</td><td>Registra el resultado de cada contacto: respondió / no respondió / retomó / rechazó. Ese registro construye el proceso de reactivación de tu empresa.</td></tr>
+              <tr><td>9</td><td>Reflexión</td><td>¿Tu empresa tiene este proceso implementado? ¿O la reactivación depende de que el vendedor "se acuerde" del cliente?</td></tr>
+              <tr><td>10</td><td>CTA</td><td>"En DC Consultorías te ayudamos a implementar este proceso en tu equipo comercial. ¿Hablamos?" + Logo + www.dcconsultorias.com</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>La oportunidad más rentable de tu empresa puede estar en clientes que ya te compraron y simplemente dejaron de recibir atención.<br><br>Guarda esta guía y escríbenos si quieres ayuda para implementarla en tu equipo 📌<br><br><span class="b-ht">#DCConsultorias #GestionComercial #VentasConSistema #Fidelizacion #PymesConEstrategia #EquipoComercial</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- SEMANA 3 JULIO — IA OBLIGATORIA + Día de Colombia -->
+  <div class="semana-card">
+    <div class="semana-header">
+      <strong>Semana 3 — Julio</strong>
+      <span class="sem-fecha">14 al 20 de julio · Eje: 🤖 IA para decisiones comerciales · 🇨🇴 20 de Julio</span>
+    </div>
+    <div class="semana-foco">Objetivo semanal: <strong>Activar las piezas de IA obligatorias del mes. Mostrar cómo la IA traduce datos en decisiones. El 20 de julio puede usarse para un post institucional o de reflexión estratégica nacional.</strong></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Canal</th>
+            <th>Formato</th>
+            <th>Pilar</th>
+            <th>Hook / Tema</th>
+            <th>Variable</th>
+            <th>CTA</th>
+            <th>KPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="ia-row">
+            <td class="fecha-cell" style="color:#5b21b6">Lun 14 🤖</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-ia">Carrusel IA</span></td>
+            <td>P3: IA aplicada a pymes</td>
+            <td class="hook-cell">"Cómo usar IA para analizar tus datos de ventas en menos de 15 minutos. Paso a paso para pymes."</td>
+            <td><span class="var-tag v-ia">IA · Obligatoria</span></td>
+            <td class="cta-cell">Guarda · Comenta qué herramienta usas</td>
+            <td class="kpi-cell">Guardados · Comentarios</td>
+          </tr>
+          <tr class="ia-row">
+            <td class="fecha-cell" style="color:#5b21b6">Mar 15 🤖</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-ia">Post IA</span></td>
+            <td>P3: IA aplicada a pymes</td>
+            <td class="hook-cell">"IA para pymes: del reporte de ventas al plan de acción comercial. Lo que ya es posible hacer hoy."</td>
+            <td><span class="var-tag v-ia">IA · Obligatoria</span></td>
+            <td class="cta-cell">¿Tu empresa ya usa IA en sus análisis? DM</td>
+            <td class="kpi-cell">DMs · Comentarios</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Jue 17</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-reel">Reel</span></td>
+            <td>P1: Orden comercial</td>
+            <td class="hook-cell">"Una empresa sin indicadores comerciales trabaja con percepción. No con evidencia. Y eso tiene un costo real."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">¿Cuál indicador le cambiaría el juego a tu empresa?</td>
+            <td class="kpi-cell">Alcance · Comentarios</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Lun 20 🇨🇴</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-post">Post conversión</span></td>
+            <td>P4: Consultoría en acción</td>
+            <td class="hook-cell">"Segundo semestre. El momento de revisar qué funcionó, qué no, y qué decisión comercial cambia el rumbo."</td>
+            <td><span class="var-tag v-con">Conversión</span></td>
+            <td class="cta-cell">Escríbenos · www.dcconsultorias.com</td>
+            <td class="kpi-cell">DMs · Visitas web</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="borradores-section">
+      <div class="borradores-title">📝 Borradores — Semana 3 Julio (🤖 IA Obligatoria · 🇨🇴 20 de Julio)</div>
+
+      <details class="borrador ia-borrador">
+        <summary><span class="b-num ia">L07 🤖</span> Carrusel IA · IG · Lun 14 jul · "Cómo usar IA para analizar datos de ventas en 15 minutos"</summary>
+        <div class="b-inner">
+          <div class="b-block ia"><label>Portada — Slide 1 (Pieza IA Obligatoria)</label>"Cómo usar IA para analizar los datos de ventas de tu pyme en menos de 15 minutos. Paso a paso." · "Guarda este carrusel 📌"</div>
+          <table class="b-tbl ia">
+            <thead><tr><th>Slide</th><th>Título</th><th>Contenido del slide</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Portada</td><td>"Cómo analizar los datos de ventas de tu empresa con IA en 15 minutos." Subtexto: "Ya no necesitas un analista. Necesitas saber qué preguntar."</td></tr>
+              <tr><td>2</td><td>¿Por qué ahora?</td><td>La mayoría de pymes tiene datos de ventas dispersos en Excel, CRM o facturación. La IA puede convertirlos en insights accionables sin necesidad de conocimientos técnicos.</td></tr>
+              <tr><td>3</td><td>Paso 1 · Exporta tus datos</td><td>Exporta desde tu CRM o sistema de facturación un reporte de ventas de los últimos 3–6 meses. Columnas mínimas necesarias: cliente / fecha / monto / producto o servicio / estado (cerrado/abierto).</td></tr>
+              <tr><td>4</td><td>Paso 2 · Carga en ChatGPT o Claude</td><td>Sube el archivo (Excel, CSV o copia el contenido) a ChatGPT-4 o Claude. Dile: "Este es el reporte de ventas de mi empresa de los últimos 6 meses. Analízalo."</td></tr>
+              <tr><td>5</td><td>Paso 3 · Pide los patrones</td><td>Prompts clave: "¿Cuáles son los 3 clientes con mayor valor total?" / "¿Qué producto o servicio tiene mayor frecuencia de compra?" / "¿Qué mes concentró más ventas?"</td></tr>
+              <tr><td>6</td><td>Paso 4 · Identifica inactivos</td><td>Prompt: "Lista los clientes que compraron antes del [fecha] y no tienen compras posteriores. Ordénalos por monto histórico de mayor a menor." → Ya tienes tu lista de reactivación priorizada.</td></tr>
+              <tr><td>7</td><td>Paso 5 · Plan de acción</td><td>Prompt: "Con base en estos datos, dame 3 acciones comerciales concretas que debería implementar el mes que viene." → La IA convierte el análisis en decisiones.</td></tr>
+              <tr><td>8</td><td>Lo que la IA NO hace</td><td>No reemplaza el criterio del equipo comercial. No interpreta contexto que no está en los datos. No actúa sola. La IA amplifica tu capacidad de análisis. La decisión siempre es tuya.</td></tr>
+              <tr><td>9</td><td>Pre-condición</td><td>Para que esto funcione, necesitas datos mínimamente organizados. Si tu empresa aún no los tiene, ese es el primer paso: ordenar la información comercial.</td></tr>
+              <tr><td>10</td><td>CTA</td><td>"¿Tu empresa tiene los datos listos para este ejercicio? En DC Consultorías te ayudamos a ordenar tu información comercial y usarla para crecer." + Logo + www.dcconsultorias.com</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>No necesitas un analista de datos para entender lo que tus cifras de ventas te están diciendo.<br><br>Con IA y tus datos exportados, puedes hacerlo en 15 minutos. Guarda este paso a paso 📌<br><br>¿Tu empresa ya usa IA para analizar sus ventas? Cuéntanos qué herramienta 👇<br><br><span class="b-ht ia">#DCConsultorias #IAparaPymes #HerramientasDeIA #VentasConIA #IAenVentas #GestionComercial #PymesConEstrategia</span></div>
+        </div>
+      </details>
+
+      <details class="borrador ia-borrador">
+        <summary><span class="b-num ia">L08 🤖</span> Post IA · LI · Mar 15 jul · "IA para pymes: del reporte de ventas al plan de acción"</summary>
+        <div class="b-inner">
+          <div class="b-block ia"><label>Hook — Primera línea (Pieza IA Obligatoria)</label>La IA ya está ayudando a equipos comerciales de pymes a convertir datos dispersos en decisiones. Sin analistas, sin presupuestos grandes, sin complejidad técnica.</div>
+          <div class="b-block"><label>Cuerpo del post</label>Lo que antes requería un equipo de análisis hoy puede hacerlo un gerente comercial o un dueño de empresa en menos de 20 minutos con las herramientas correctas.<br><br>¿Qué es posible hacer hoy con IA en ventas?<br><br>✔ Identificar clientes de alto valor que llevan más de 60 días sin comprar.<br>✔ Detectar qué productos o servicios tienen mayor margen y frecuencia de recompra.<br>✔ Encontrar patrones en las objeciones de clientes a partir de conversaciones registradas.<br>✔ Generar un plan de acción comercial priorizado a partir de datos reales.<br><br>La pre-condición es tener un mínimo de orden comercial: datos registrados, aunque sea en Excel.<br>La IA amplifica lo que ya tienes. No construye lo que no existe.<br><br>Si tu empresa aún no está en ese punto, ese es exactamente el trabajo previo que hacemos en DC Consultorías.</div>
+          <div class="b-block cta"><label>CTA</label>¿Tu empresa ya usa IA en sus análisis comerciales? ¿O está en la etapa de ordenar primero? DM abierto para conversar 👇<br><br><span class="b-ht ia">#DCConsultorias #IAparaPymes #HerramientasDeIA #VentasConIA #AutomatizacionComercial #GestionComercial #Pymes</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">L09</span> Reel IG · Jue 17 jul · "Una empresa sin indicadores trabaja con percepción, no con evidencia"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primer frame</label>"Una empresa sin indicadores comerciales trabaja con percepción. No con evidencia. Y eso tiene un costo real."</div>
+          <table class="b-tbl">
+            <thead><tr><th>Segmento</th><th>Tiempo</th><th>Texto en pantalla</th><th>Voz / Locución</th></tr></thead>
+            <tbody>
+              <tr><td>Apertura</td><td>0–3 s</td><td>"¿Tu empresa sabe exactamente cuánto vendió este mes vs. el anterior?"</td><td>—</td></tr>
+              <tr><td>Realidad</td><td>3–10 s</td><td>Viñetas: Decisiones basadas en sensaciones / Sin saber qué está fallando / Sin poder proyectar el mes siguiente</td><td>"Cuando no hay indicadores, los problemas se notan tarde. Y las oportunidades se ven después de que pasan."</td></tr>
+              <tr><td>Consecuencia</td><td>10–18 s</td><td>"3 consecuencias de operar sin indicadores: Inversión en lo que no funciona / Vendedores sin norte claro / Imposible escalar"</td><td>"La diferencia entre una empresa que crece de forma sostenida y una que oscila sin control casi siempre está en los indicadores."</td></tr>
+              <tr><td>CTA</td><td>18–22 s</td><td>Logo DC + "¿Cuál indicador le cambiaría el juego a tu empresa? Comenta ↓"</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>No se trata de tener cien indicadores. Se trata de tener los tres o cuatro correctos y revisarlos con disciplina.<br><br>¿Cuál indicador comercial crees que más le falta a tu empresa? 👇<br><br><span class="b-ht">#DCConsultorias #GestionComercial #OrdenComercial #VentasConSistema #PymesConEstrategia</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">L10</span> Post LI Conversión · Lun 20 jul 🇨🇴 · "Segundo semestre: el momento de revisar y decidir"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primera línea (Día de Colombia · Conversión)</label>Segundo semestre. El momento de revisar qué funcionó, qué no, y qué decisión comercial puede cambiar el rumbo de aquí a diciembre.</div>
+          <div class="b-block"><label>Cuerpo del post</label>Hay empresas que entran al segundo semestre con la misma inercia del primero.<br>Y hay empresas que usan este punto del año para reajustar, priorizar y acelerar con dirección clara.<br><br>Las preguntas que vale la pena hacerse hoy:<br><br>→ ¿Llegamos al 50% de la meta anual de ventas?<br>→ ¿Qué cliente o segmento generó el mayor retorno y lo estamos atendiendo con estrategia?<br>→ ¿Qué proceso comercial probamos que no funcionó y seguimos repitiendo?<br>→ ¿Tiene el equipo los recursos (proceso, mensaje, herramientas) para cerrar fuerte el año?<br><br>El segundo semestre no empieza en agosto. Empieza con las decisiones que se toman hoy.<br><br>En este 20 de julio, Colombia celebra independencia. En las empresas, la independencia también se construye: con orden, con estrategia y con decisiones basadas en evidencia.</div>
+          <div class="b-block cta"><label>CTA (Conversión)</label>Si quieres empezar el segundo semestre con un diagnóstico claro de tu área comercial, escríbeme por DM o visítanos en www.dcconsultorias.com<br><br><span class="b-ht">#DCConsultorias #ConsultoriaComercial #EstrategiaComercial #GestionComercial #PymesConEstrategia #Colombia #20DeJulio</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- SEMANA 4 JULIO -->
+  <div class="semana-card">
+    <div class="semana-header">
+      <strong>Semana 4 — Julio</strong>
+      <span class="sem-fecha">21 al 27 de julio · Eje: Crecer con sistema — cierre de narrativa mensual</span>
+    </div>
+    <div class="semana-foco">Objetivo semanal: <strong>Cerrar la narrativa del mes con herramientas concretas. Conectar datos, decisión y sistema comercial como un todo. Semana de alta conversión.</strong></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Canal</th>
+            <th>Formato</th>
+            <th>Pilar</th>
+            <th>Hook / Tema</th>
+            <th>Variable</th>
+            <th>CTA</th>
+            <th>KPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fecha-cell">Lun 21</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-reel">Reel</span></td>
+            <td>P1: Orden comercial</td>
+            <td class="hook-cell">"Antes de contratar más vendedores, revisa si tienes el proceso para gestionarlos. Sin eso, más equipo es más desorden."</td>
+            <td><span class="var-tag v-atr">Atracción</span></td>
+            <td class="cta-cell">¿En tu empresa pasa esto? Comenta</td>
+            <td class="kpi-cell">Reproducción · Comentarios</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Mié 23</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-post">Post estratégico</span></td>
+            <td>P3: Ventas y clientes</td>
+            <td class="hook-cell">"Fidelizar con datos no es complejo. Es disciplina + seguimiento + estrategia. Tres elementos que la mayoría de pymes tiene por separado pero no conecta."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">¿Cómo manejan la fidelización en tu empresa?</td>
+            <td class="kpi-cell">Impresiones · DMs</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Vie 25</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-carrusel">Carrusel</span></td>
+            <td>P1: Orden comercial</td>
+            <td class="hook-cell">"Ruta de 4 semanas para fortalecer tu gestión comercial. Accionable desde el lunes."</td>
+            <td><span class="var-tag v-con">Conversión</span></td>
+            <td class="cta-cell">Guarda · Escríbenos para acompañarte</td>
+            <td class="kpi-cell">Guardados · DMs · Visitas web</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="borradores-section">
+      <div class="borradores-title">📝 Borradores — Semana 4 Julio (Cierre narrativa mensual)</div>
+
+      <details class="borrador">
+        <summary><span class="b-num">L11</span> Reel IG · Lun 21 jul · "Antes de contratar más vendedores, revisa si tienes el proceso"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primer frame</label>"Antes de contratar más vendedores, revisa si tienes el proceso para gestionarlos. Sin eso, más equipo es más desorden."</div>
+          <table class="b-tbl">
+            <thead><tr><th>Segmento</th><th>Tiempo</th><th>Texto en pantalla</th><th>Voz / Locución</th></tr></thead>
+            <tbody>
+              <tr><td>Apertura</td><td>0–3 s</td><td>"¿Piensas contratar más vendedores para crecer?"</td><td>—</td></tr>
+              <tr><td>Advertencia</td><td>3–10 s</td><td>4 preguntas: ¿Tienes el proceso de ventas documentado? / ¿Sabes cómo medir su desempeño? / ¿Tienen un guión o metodología común? / ¿El onboarding está definido?</td><td>"Si no tienes respuesta clara a estas cuatro preguntas, contratar más personas no va a acelerar el crecimiento. Va a amplificar el desorden."</td></tr>
+              <tr><td>Realidad</td><td>10–18 s</td><td>"Más vendedores sin proceso = más caos. Más vendedores con proceso = crecimiento real."</td><td>"El problema de ventas en pymes rara vez es el tamaño del equipo. Casi siempre es el proceso."</td></tr>
+              <tr><td>CTA</td><td>18–22 s</td><td>Logo DC + "¿Tu empresa tiene el proceso listo? Comenta ↓"</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>Crecer el equipo de ventas tiene sentido cuando hay un proceso que se puede replicar. Sin eso, solo se escala la improvisación.<br><br>¿Tu empresa tiene el proceso de ventas documentado y funcionando? 👇<br><br><span class="b-ht">#DCConsultorias #GestionComercial #OrdenComercial #VentasConSistema #PymesConEstrategia #EquipoComercial</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">L12</span> Post LI · Mié 23 jul · "Fidelizar con datos es disciplina + seguimiento + estrategia"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primera línea</label>Fidelizar con datos no es complejo. Es disciplina + seguimiento + estrategia. Tres elementos que la mayoría de pymes tiene por separado pero no conecta.</div>
+          <div class="b-block"><label>Cuerpo del post</label>¿Qué hace posible la fidelización basada en datos?<br><br>✔ Tener registrado el historial de cada cliente: qué compró, cuándo, cuánto y con qué frecuencia.<br>✔ Definir indicadores de alerta: si un cliente no compra en X días, el sistema (o el vendedor) debe saberlo y actuar.<br>✔ Personalizar el contacto: no llamar para "ver si necesita algo", sino con un motivo relevante para ese cliente específico.<br>✔ Medir el resultado: cuántos clientes contactados reactivaron, cuántos no respondieron, qué mensaje funcionó mejor.<br><br>La diferencia entre las empresas que fidelizan bien y las que no, casi nunca es el producto.<br>Es la disciplina del proceso postventa.<br><br>Y ese proceso puede ser simple. No necesita un CRM costoso. Necesita consistencia.</div>
+          <div class="b-block cta"><label>CTA</label>¿Cómo maneja la fidelización de clientes tu empresa hoy? ¿Proceso definido o intuición del vendedor? 👇<br><br><span class="b-ht">#DCConsultorias #Fidelizacion #GestionComercial #VentasConSistema #OrdenComercial #PymesConEstrategia</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">L13</span> Carrusel IG · Vie 25 jul · "Ruta de 4 semanas para fortalecer tu gestión comercial"</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Portada — Slide 1</label>"Ruta de 4 semanas para fortalecer tu gestión comercial. Accionable desde el lunes." · "Guarda y escríbenos para acompañarte 📌"</div>
+          <table class="b-tbl">
+            <thead><tr><th>Slide</th><th>Semana / Tema</th><th>Contenido del slide</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Portada</td><td>"Ruta de 4 semanas para fortalecer la gestión comercial de tu pyme." Subtexto: "Concreto. Accionable. Sin consultora si tienes disciplina."</td></tr>
+              <tr><td>2</td><td>¿Para quién?</td><td>Esta ruta es para empresas que quieren ordenar su área comercial sin esperar el año siguiente. Para equipos de 2 a 15 personas. Para gerentes que saben que algo falla pero no saben exactamente qué.</td></tr>
+              <tr><td>3</td><td>Semana 1 · Ordenar la base</td><td>Tarea: Exporta y limpia tu base de clientes. Clasifica en: activos (compraron en últimos 90 días) / inactivos / prospectos. Resultado esperado: saber exactamente con qué cartera opera tu empresa hoy.</td></tr>
+              <tr><td>4</td><td>Semana 2 · Revisar el proceso</td><td>Tarea: Mapea el proceso de ventas actual: desde el primer contacto hasta el cierre y el postventa. Identifica en qué etapa se pierden más oportunidades. Resultado: el cuello de botella visible.</td></tr>
+              <tr><td>5</td><td>Semana 3 · Definir indicadores</td><td>Tarea: Elige 4–5 indicadores que medirás cada mes (tasa de conversión, ticket promedio, clientes inactivos, recompra, ciclo de venta). Asigna responsable y frecuencia de revisión. Resultado: el tablero mínimo de gestión.</td></tr>
+              <tr><td>6</td><td>Semana 4 · Crear la rutina</td><td>Tarea: Define una reunión semanal de ventas de 30 minutos. Agenda fija: ¿qué se cerró? / ¿qué está en proceso? / ¿qué necesita atención esta semana? Resultado: el hábito de gestión instalado.</td></tr>
+              <tr><td>7</td><td>Lo que esta ruta no reemplaza</td><td>Esta ruta organiza lo que ya tienes. Si hay problemas de propuesta de valor, segmentación o proceso de ventas más profundos, esos requieren un acompañamiento estratégico. Pero este es el punto de partida correcto.</td></tr>
+              <tr><td>8</td><td>El resultado esperado</td><td>Al final de las 4 semanas: base de clientes ordenada / proceso visible / indicadores activos / reunión de ventas funcionando. Eso ya es un negocio con dirección.</td></tr>
+              <tr><td>9</td><td>Reflexión</td><td>¿Cuál de estas cuatro semanas le haría más diferencia a tu empresa si la implementara hoy?</td></tr>
+              <tr><td>10</td><td>CTA</td><td>"Si quieres hacer este recorrido con acompañamiento, en DC Consultorías lo hacemos contigo." + Logo + www.dcconsultorias.com · Escríbenos por DM</td></tr>
+            </tbody>
+          </table>
+          <div class="b-block cta"><label>Caption Instagram</label>4 semanas. 4 acciones concretas. Un área comercial más ordenada y con dirección.<br><br>Guarda este carrusel y escríbenos si quieres hacer este recorrido con acompañamiento 📌<br><br><span class="b-ht">#DCConsultorias #GestionComercial #VentasConSistema #OrdenComercial #PymesConEstrategia #ConsultoriaComercial</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- SEMANA 5 JULIO -->
+  <div class="semana-card">
+    <div class="semana-header">
+      <strong>Semana 5 — Julio</strong>
+      <span class="sem-fecha">28 al 31 de julio · Eje: Cierre estratégico del primer semestre</span>
+    </div>
+    <div class="semana-foco">Objetivo semanal: <strong>Cerrar julio con reflexión y posicionamiento. Frase de alto impacto en Instagram + reflexión de semestre en LinkedIn. Semana de recordación de marca.</strong></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Canal</th>
+            <th>Formato</th>
+            <th>Pilar</th>
+            <th>Hook / Tema</th>
+            <th>Variable</th>
+            <th>CTA</th>
+            <th>KPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fecha-cell">Lun 28</td>
+            <td><span class="canal-tag c-ig">Instagram</span></td>
+            <td><span class="tag tag-estatico">Post estático</span></td>
+            <td>P5: Liderazgo empresarial</td>
+            <td class="hook-cell">Frase: <em>"La estrategia no está en el documento. Está en las decisiones que la empresa empieza a tomar."</em></td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">www.dcconsultorias.com</td>
+            <td class="kpi-cell">Compartidos · Alcance</td>
+          </tr>
+          <tr>
+            <td class="fecha-cell">Mié 30</td>
+            <td><span class="canal-tag c-li">LinkedIn</span></td>
+            <td><span class="tag tag-post">Reflexión estratégica</span></td>
+            <td>P4: Consultoría en acción</td>
+            <td class="hook-cell">"Primer semestre terminado. Antes de acelerar en agosto, la pregunta más importante que puede hacerse un empresario."</td>
+            <td><span class="var-tag v-aut">Autoridad</span></td>
+            <td class="cta-cell">¿Qué aprendió tu empresa este semestre?</td>
+            <td class="kpi-cell">Comentarios · DMs · Alcance</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="borradores-section">
+      <div class="borradores-title">📝 Borradores — Semana 5 Julio (Cierre estratégico del bimestre)</div>
+
+      <details class="borrador">
+        <summary><span class="b-num">L14</span> Post Estático IG · Lun 28 jul · Frase de cierre de julio</summary>
+        <div class="b-inner">
+          <div class="b-block frase">"La estrategia no está en el documento. Está en las decisiones que la empresa empieza a tomar."</div>
+          <div class="b-block"><label>Diseño sugerido</label>Fondo degradado azul profundo (#0f172a → #1e3a8a). Frase en blanco, tipografía grande y serif o display. Línea decorativa fina encima del texto. Logo DC pequeño en esquina inferior derecha. Formato cuadrado 1:1.</div>
+          <div class="b-block cta"><label>Caption Instagram</label>Muchas empresas tienen el plan. Pocos tienen la disciplina de actuar con base en él cada semana.<br><br>La estrategia se prueba en las decisiones cotidianas: a quién llaman primero, qué revisan cada lunes, qué dejan de hacer porque no aporta.<br><br>¿Tu empresa toma decisiones con estrategia o con costumbre?<br><br>🔗 www.dcconsultorias.com<br><br><span class="b-ht">#DCConsultorias #LiderazgoEmpresarial #EstrategiaComercial #PymesConEstrategia #OrdenComercial</span></div>
+        </div>
+      </details>
+
+      <details class="borrador">
+        <summary><span class="b-num">L15</span> Post LI · Mié 30 jul · Reflexión de cierre de semestre</summary>
+        <div class="b-inner">
+          <div class="b-block hook"><label>Hook — Primera línea</label>Primer semestre terminado. Antes de acelerar en agosto, la pregunta más importante que puede hacerse un empresario.</div>
+          <div class="b-block"><label>Cuerpo del post</label>No es "¿cuánto vendimos?" aunque eso importa.<br><br>Es: ¿qué aprendió la empresa en estos seis meses que cambia cómo va a operar en los próximos seis?<br><br>Las empresas que crecen de forma sostenida no solo miden resultados. Extraen aprendizajes y los convierten en decisiones.<br><br>Cuatro preguntas para cerrar el semestre con claridad:<br><br>✔ ¿Qué proceso comercial funcionó mejor de lo esperado y merece más inversión?<br>✔ ¿Qué cliente o segmento generó el mayor retorno y lo estamos atendiendo con prioridad?<br>✔ ¿Qué seguimos haciendo por costumbre aunque ya no genera resultados?<br>✔ ¿Qué decisión comercial postergamos en el primer semestre que no puede seguir esperando?<br><br>El segundo semestre no empieza en agosto. Empieza con las respuestas a estas cuatro preguntas.<br><br>Desde DC Consultorías: gracias a quienes nos siguen, leen y comparten. Este espacio existe para que más empresas crezcan con orden y con estrategia.</div>
+          <div class="b-block cta"><label>CTA</label>¿Qué aprendió tu empresa este primer semestre? Cuéntame en comentarios — me interesa leerlo 👇<br><br><span class="b-ht">#DCConsultorias #ConsultoriaComercial #LiderazgoEmpresarial #EstrategiaComercial #PymesConEstrategia #GestionComercial #Pymes</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       FECHAS CLAVE
+  ════════════════════════════════════════ -->
+  <div class="fechas-section">
+    <h3>📅 Fechas clave y oportunidades editoriales</h3>
+    <div class="fechas-grid">
+      <div class="fc fc-verde">
+        <div class="fc-date">Lun 15 de junio</div>
+        <div class="fc-name">Semana del Día del Padre</div>
+        <div class="fc-note">Oportunidad para reflexión sobre liderazgo empresarial. LinkedIn: post sobre decisión y responsabilidad comercial.</div>
+      </div>
+      <div class="fc fc-azul">
+        <div class="fc-date">Dom 29 de junio</div>
+        <div class="fc-name">San Pedro y San Pablo — Festivo Colombia</div>
+        <div class="fc-note">Semana corta de trabajo. Ajustar publicación del lunes al martes si aplica.</div>
+      </div>
+      <div class="fc fc-oro">
+        <div class="fc-date">Lun 20 de julio</div>
+        <div class="fc-name">🇨🇴 Independencia de Colombia</div>
+        <div class="fc-note">Oportunidad de post estratégico de cierre de semestre. "Segundo semestre: qué decisión comercial cambia el rumbo." Tono reflexivo.</div>
+      </div>
+      <div class="fc fc-ia">
+        <div class="fc-date">Semana 3 de cada mes</div>
+        <div class="fc-name">🤖 Línea IA Obligatoria</div>
+        <div class="fc-note">Activar siempre en la tercera semana del mes: 1 pieza Instagram + 1 pieza LinkedIn sobre IA aplicada a pymes para ventas.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       RESUMEN TOTAL
+  ════════════════════════════════════════ -->
+  <div class="resumen-section">
+    <h3>Resumen total — Junio + Julio 2026</h3>
+    <div class="resumen-grid">
+      <div class="res-card">
+        <div class="num">26</div>
+        <div class="lbl">Piezas totales</div>
+        <div class="det">13 en junio · 13 en julio</div>
+      </div>
+      <div class="res-card">
+        <div class="num">14</div>
+        <div class="lbl">Piezas Instagram</div>
+        <div class="det">7 en junio · 7 en julio<br>Reels, Carruseles, Posts estáticos</div>
+      </div>
+      <div class="res-card">
+        <div class="num">12</div>
+        <div class="lbl">Piezas LinkedIn</div>
+        <div class="det">6 en junio · 6 en julio<br>Posts estratégicos + Conversión</div>
+      </div>
+      <div class="res-card ia-card">
+        <div class="num">4</div>
+        <div class="lbl">Piezas IA obligatorias</div>
+        <div class="det">2 en junio (sem 3) · 2 en julio (sem 3)<br>1 Instagram + 1 LinkedIn por mes</div>
+      </div>
+      <div class="res-card">
+        <div class="num">40%</div>
+        <div class="lbl">Atracción</div>
+        <div class="det">Reels + Carruseles educativos de alta retención</div>
+      </div>
+      <div class="res-card">
+        <div class="num">38%</div>
+        <div class="lbl">Autoridad</div>
+        <div class="det">Posts LinkedIn estratégicos + Posts estáticos</div>
+      </div>
+      <div class="res-card">
+        <div class="num">22%</div>
+        <div class="lbl">Conversión</div>
+        <div class="det">Posts de activación comercial con CTA directo a DM o URL</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       PILARES DE REFERENCIA
+  ════════════════════════════════════════ -->
+  <div style="margin-top:40px">
+    <h3 style="font-size:14px;font-weight:700;color:var(--azul);margin-bottom:12px">Pilares editoriales activos en la parrilla</h3>
+    <div class="pilares-ref">
+      <div class="pilar-ref">
+        <h4>P1 · Orden comercial</h4>
+        <p>Procesos, seguimiento, base de datos, indicadores y metas. Eje de la semana 1 de julio.</p>
+      </div>
+      <div class="pilar-ref">
+        <h4>P2 · Marketing estratégico</h4>
+        <p>Propuesta de valor, segmentación, contenido con intención. Eje completo de junio.</p>
+      </div>
+      <div class="pilar-ref">
+        <h4>P3 · Ventas, clientes y IA</h4>
+        <p>Recuperación, fidelización, clasificación y herramientas de IA aplicadas a ventas.</p>
+      </div>
+      <div class="pilar-ref">
+        <h4>P4 · Consultoría en acción</h4>
+        <p>Diagnóstico, metodología DC, casos y reflexiones. Semanas de cierre de mes.</p>
+      </div>
+      <div class="pilar-ref">
+        <h4>P5 · Liderazgo empresarial</h4>
+        <p>Frases potentes, reflexiones de cierre, posicionamiento de voz de marca.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       HASHTAGS
+  ════════════════════════════════════════ -->
+  <div class="hashtags-section">
+    <h3>Banco de hashtags por categoría</h3>
+    <div class="ht-group">
+      <h4>Marca DC</h4>
+      <div class="ht-tags">
+        <span class="ht">#DCConsultorias</span>
+        <span class="ht">#ConsultoriaComercial</span>
+        <span class="ht">#OrdenComercial</span>
+        <span class="ht">#EstrategiaComercial</span>
+      </div>
+    </div>
+    <div class="ht-group">
+      <h4>Marketing y ventas</h4>
+      <div class="ht-tags">
+        <span class="ht">#MarketingYVentas</span>
+        <span class="ht">#EstrategiaDeContenido</span>
+        <span class="ht">#MarketingAplicado</span>
+        <span class="ht">#PropuestaDeValor</span>
+        <span class="ht">#VentasConSistema</span>
+        <span class="ht">#GestionComercial</span>
+      </div>
+    </div>
+    <div class="ht-group">
+      <h4>Pymes y audiencia</h4>
+      <div class="ht-tags">
+        <span class="ht">#PymesConEstrategia</span>
+        <span class="ht">#Pymes</span>
+        <span class="ht">#LiderazgoEmpresarial</span>
+        <span class="ht">#Emprendimiento</span>
+        <span class="ht">#EquipoComercial</span>
+        <span class="ht">#Fidelizacion</span>
+      </div>
+    </div>
+    <div class="ht-group">
+      <h4>🤖 IA obligatoria</h4>
+      <div class="ht-tags">
+        <span class="ht ht-ia">#IAparaPymes</span>
+        <span class="ht ht-ia">#InteligenciaArtificial</span>
+        <span class="ht ht-ia">#HerramientasDeIA</span>
+        <span class="ht ht-ia">#VentasConIA</span>
+        <span class="ht ht-ia">#IAenVentas</span>
+        <span class="ht ht-ia">#AutomatizacionComercial</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <strong>DC_ContentOps · DC Consultorías</strong> &nbsp;·&nbsp; Parrilla Junio–Julio 2026 &nbsp;·&nbsp; LinkedIn + Instagram &nbsp;·&nbsp; 26 piezas · 4 obligatorias IA
+</footer>
+
+</body>
+</html>
